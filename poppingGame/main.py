@@ -7,7 +7,7 @@ class Dart:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.dart = pygame.image.load('Popping-Game/poppingGame/Assets/images/dart.png').convert_alpha()
+        self.dart = pygame.image.load('poppingGame/Assets/images/dart.png').convert_alpha()
         self.dart = pygame.transform.scale_by(self.dart, 0.75)
         self.dart_rect = self.dart.get_rect(center = (self.x, self.y))
         self.old_mouse = False
@@ -76,7 +76,7 @@ class Balloon:
     def __init__(self, x, y, health):
         self.health = health
         self.health_ = health
-        self.balloon = pygame.image.load(f"Popping-Game/poppingGame/Assets/images/{types[self.health]}_balloon.png").convert_alpha()
+        self.balloon = pygame.image.load(f"poppingGame/Assets/images/{types[self.health]}_balloon.png").convert_alpha()
         self.balloon = pygame.transform.scale_by(self.balloon, 0.4)
         self.balloon_rect = self.balloon.get_rect(center=(x, y))
         self.popped = False
@@ -86,7 +86,7 @@ class Balloon:
         self.draw()
 
     def draw(self):
-        self.balloon = pygame.image.load(f"Popping-Game/poppingGame/Assets/images/{types[self.health]}_balloon.png").convert_alpha()
+        self.balloon = pygame.image.load(f"poppingGame/Assets/images/{types[self.health]}_balloon.png").convert_alpha()
         self.balloon = pygame.transform.scale_by(self.balloon, 0.4)
         screen.blit(self.balloon, self.balloon_rect)
 
@@ -104,7 +104,7 @@ SIDE = 4
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Balloons Popping game")
 clock = pygame.time.Clock()
-font_family = "Popping-Game/poppingGame/Assets/font/LuckiestGuy-Regular.ttf"
+font_family = "poppingGame/Assets/font/LuckiestGuy-Regular.ttf"
 font1 = pygame.font.Font(font_family, 50)
 font2 = pygame.font.Font(font_family, 150)
 font3 = pygame.font.Font(font_family, 160)
@@ -129,7 +129,7 @@ text2_rect = text2.get_rect(center = (WIDTH / 2, HEIGHT / 2))
 text3 = font2.render(f"YOU WON!", True, "green")
 text3_rect = text3.get_rect(center = (WIDTH / 2, HEIGHT / 2))
 
-pop = pygame.mixer.Sound("Popping-Game/poppingGame/Assets/sounds/pop.wav")
+pop = pygame.mixer.Sound("poppingGame/Assets/sounds/pop.wav")
 
 while True:
     for event in pygame.event.get():
